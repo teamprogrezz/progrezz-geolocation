@@ -11,7 +11,6 @@ const double MILES_TO_NAUTIC_MILES = 0.8684;
 const double DEGREES_TO_RADIANS = M_PI / 180;
 const double RADIANS_TO_DEGREES = 180 / M_PI;
 
-
 static inline double distance_milles(VALUE lat1, VALUE lon1, VALUE lat2, VALUE lon2, VALUE radius) {
   double latitude1, longitude1, latitude2, longitude2;
   double theta1, theta2;

@@ -32,6 +32,8 @@ Una vez instalada la gema, puede acceder a las funcionalidades de la misma usand
 #### Distancia esférica ####
 ```ruby
 # main.rb
+require "progrezz/geolocation"
+
 p1 = {latitude:  38.898556, longitude: -77.037852}
 p2 = {latitude:  38.897147, longitude: -77.043934}
 
