@@ -1,5 +1,10 @@
 require "progrezz/geolocation_ext"
  
-def echo
-  echo_world
+module Progrezz
+  class Geolocation
+    private
+      @@instance = nil
+
+
+  end
 end

@@ -1,11 +1,15 @@
 #include <ruby.h>
- 
-static VALUE method_echo_world(VALUE rb_self) {
-  printf("Hi world!\n");
 
-  return Qnil;
-}
+#include "methods.h"
  
 void Init_geolocation_ext() {
-  rb_define_method(rb_cObject, "echo_world", method_echo_world, 0);
+  // Define Progrezz module
+  VALUE progrezz_module = rb_define_module("Progrezz");
+
+  // Define Geolocation class
+  VALUE geolocation = rb_define_class_under(progrezz_module, "Geolocation", rb_cObject);
+
+  // Define static methods for that class, using C methods.
+  rb_define_module_function(geolocation, "echo", geolocation_echo, 1);
+  // rb_define_private_method(geolocation, "_echo", geolocation_echo, 1);
 }

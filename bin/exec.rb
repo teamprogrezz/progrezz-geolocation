@@ -1,4 +1,4 @@
 #!/bin/env ruby
 require 'progrezz/geolocation'
- 
-echo()
+
+Progrezz::Geolocation.echo("derp")
