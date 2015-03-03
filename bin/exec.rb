@@ -1,7 +1,9 @@
+#!/env/bin ruby
+
 require 'progrezz/geolocation'
 
-p1 = {latitude:  0.5, longitude: 3.0}
-p2 = {latitude:  0.51, longitude: 3.0}
+p1 = {latitude:  38.898556, longitude: -77.037852}
+p2 = {latitude:  38.897147, longitude: -77.043934}
 
 puts "P1: " + p1[:latitude].to_s + ", " + p1[:longitude].to_s
 puts "P2: " + p2[:latitude].to_s + ", " + p2[:longitude].to_s
