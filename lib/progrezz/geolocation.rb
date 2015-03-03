@@ -89,7 +89,7 @@ module Progrezz
     #
     # * *Retorna*:
     #   - Distancia convertida.
-    def self.earth_latitude_to_distance (latitude_deg, unit = nil, radius = nil)
+    def self.latitude_to_distance (latitude_deg, unit = nil, radius = nil)
       if unit == nil then unit = DEFAULT_UNIT end
       if radius == nil then radius = EARTH_POLAR_RADIUS end
 
@@ -106,7 +106,7 @@ module Progrezz
     #
     # * *Retorna*:
     #   - Distancia convertida.
-    def self.earth_longitude_to_distance (longitude_deg, unit = nil, radius = nil)
+    def self.longitude_to_distance (longitude_deg, unit = nil, radius = nil)
       if unit == nil then unit = DEFAULT_UNIT end
       if radius == nil then radius = EARTH_EQUATORIAL_RADIUS end
 

@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name = 'progrezz-geolocation'
-  spec.version = '0.2'
+  spec.version = '0.3'
   spec.summary = 'Geolocalized gem.'
   spec.description = 'Library for ruby, used for the geolocalized server module.'
   spec.email = 'proyecto.progrezz@gmail.com'
