@@ -27,7 +27,7 @@ module Progrezz
 
       begin
         distance = case unit
-          when :m            then self._distance_m(point1[:latitude], point1[:longitude], point2[:latitude], point2[:longitude], radius)
+          when :m            then self._distance_m(point1[:latitude].to_f, point1[:longitude].to_f, point2[:latitude].to_f, point2[:longitude].to_f, radius.to_f)
           when :km           then self._distance_km(point1[:latitude].to_f, point1[:longitude].to_f, point2[:latitude].to_f, point2[:longitude].to_f, radius.to_f)
           when :miles        then self._distance_miles(point1[:latitude].to_f, point1[:longitude].to_f, point2[:latitude].to_f, point2[:longitude].to_f, radius.to_f)
           when :nautic_miles then self._distance_nautic_miles(point1[:latitude].to_f, point1[:longitude].to_f, point2[:latitude].to_f, point2[:longitude].to_f, radius.to_f)
