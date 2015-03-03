@@ -7,6 +7,7 @@ Gem::Specification.new do |spec|
   spec.homepage = 'http://progrezz.it'
   spec.author = 'Daniel Herzog Cruz'
   spec.bindir = 'bin'
+  spec.licenses = ['MIT']
   spec.executable = 'exec.rb'
   spec.files = Dir['lib/**/*.rb'] + Dir['bin/*'] + Dir['ext/**/*.h'] + Dir['ext/**/*.c'] + Dir['ext/**/extconf.rb']
   spec.platform = Gem::Platform::RUBY # This is the default
