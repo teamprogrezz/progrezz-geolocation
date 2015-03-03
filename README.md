@@ -18,8 +18,10 @@ Finalmente, instale la gema generada (tenga en cuenta la versión):
 
 Si usa bundle para gestionar las dependencias, utilice la siguinte línea en el *Gemfile*:
 
-    # Gemfile
-    gem 'progrezz-geolocation', :git => 'https://github.com/teamprogrezz/progrezz-geolocation.git'
+```ruby
+# Gemfile
+gem 'progrezz-geolocation', :git => 'https://github.com/teamprogrezz/progrezz-geolocation.git'
+```
 
 En caso de usar *Windows* o *Mac OS*, asegúrese de tener las herramientas nativas de Ruby para instalar la gema sin problemas.
 
@@ -28,7 +30,7 @@ En caso de usar *Windows* o *Mac OS*, asegúrese de tener las herramientas nativ
 Una vez instalada la gema, puede acceder a las funcionalidades de la misma usando la clase o contenedor ````Progrez::Geolocation```` de manera sencilla:
 
 #### Distancia esférica ####
-````
+```ruby
 # main.rb
 p1 = {latitude:  38.898556, longitude: -77.037852}
 p2 = {latitude:  38.897147, longitude: -77.043934}
@@ -51,7 +53,7 @@ puts "Distancia (km):           " + Progrezz::Geolocation.distance(p1, p2, :km, 
 puts "Distancia (miles):        " + Progrezz::Geolocation.distance(p1, p2, :miles, mars_radius).to_s
 puts "Distancia (nautic_miles): " + Progrezz::Geolocation.distance(p1, p2, :nautic_miles, mars_radius).to_s
 
-````
+```
 
 ## 4. Dependencias ##
 
