@@ -1,38 +1,32 @@
-# Librería javascript de acceso a la API REST de PROGREZZ #
+# Módulo Ruby de geolocalización #
 
 ## 1. Introducción ##
-Librería de acceso sencillo a la API REST del servidor de progrezz, mediante peticiones con formato JSON, recibiendo
+Librería o módulo sencillo escrito en Ruby, junto con una extensión en *C* (nativo), usado para realizar cálculos de manera rápida y eficiente.
 
-## 2. Uso ##
-Las peticiones se realiza mediante un objeto de tipo ````RESTResquest````. Tal como se muestra en el fichero ````example.html````, se puede realizar una petición al servidor de la siguiente manera:
+## 2. Instalación ##
+Primero, descargue el repositorio:
 
-    rest_request = new RESTResquest()
-    rest_request.onComplete = function(json_response) {
-      console.log( JSON.stringify(json_response, null, '\t') )
-    }
-    rest_request.onError = function(xhr) {
-      console.log( "ERROR! " + JSON.stringify(xhr, null, '\t') )
-    }
-    rest_request.onEnd = function(json_response) {
-      console.log("end!")
-    }
+    $ git clone https://github.com/teamprogrezz/progrezz-geolocation.git
 
-    function reset_form() {
-      // Setup default text
-      document.getElementById('form_request_str').value = JSON.stringify( RESTResquest.getTemplateRequest(), null, '\t' );
-    }
-    
-    // Send the template example request.
-    rest_request.request( RESTResquest.getTemplateRequest() )
+Posteriormente, construya la gema:
 
+    $ gem build progrezz.geolocation.gemspec
 
-**Para más información de las distintas peticiones, véase la *Wiki* de este proyecto.**
+Finalmente, instale la gema generada (tenga en cuenta la versión):
 
-## 3. Dependencias ##
-La librería hace uso de las siguientes librerías:
+    $ gem install progrezz-geolocation-x.y.gem
 
-- [jQuery 1.5.0 o superior](http://jquery.com/): Requerida para realizar peticiones *ajax* con la mayor compatibilidad posible.
+Si usa bundle para gestionar las dependencias, utilice la siguinte línea en el *Gemfile*:
 
+    # Gemfile
+    gem 'progrezz-geolocation', :git => 'https://github.com/teamprogrezz/progrezz-geolocation.git'
 
-**TODO: Traducir al inglés.**
-----------
+En caso de usar *Windows* o *Mac OS*, asegúrese de tener las herramientas nativas de Ruby para instalar la gema sin problemas.
+
+## 3. Uso ##
+...
+
+## 4. Dependencias ##
+
+- La librería requiere del entorno Ruby para construir la gema con las respectivas extensiones.
+
