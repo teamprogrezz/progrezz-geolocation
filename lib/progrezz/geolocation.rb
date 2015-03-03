@@ -55,7 +55,7 @@ module Progrezz
     # * *Retorna*:
     #   - Distancia convertida.
     def self.distance_to_miles(distance, current_unit)
-       return case unit
+       return case current_unit
          when :km then 0.621371192 * distance
          when :m  then 0.000621371192 * distance
          when :nautic_miles then 1.15077945 * distance
@@ -102,7 +102,7 @@ module Progrezz
     # * *Argumentos*:
     #   - +longitude_deg+: Longitud a convertir.
     #   - +unit+: Unidad de distancia deseada (:km, :m, :miles, :nautic_miles). Por defecto usa DEFAULT_UNIT.
-    #   - +radius+: Radio de la esfera. Por defecto es EARTH_POLAR_RADIUS.
+    #   - +radius+: Radio de la esfera. Por defecto es EARTH_EQUATORIAL_RADIUS.
     #
     # * *Retorna*:
     #   - Distancia convertida.
@@ -112,6 +112,38 @@ module Progrezz
 
       distance = ( 2 * Math::PI * radius / 360.0 ) * longitude_deg
       return convert_miles( distance, unit )
+    end
+
+    # Convertir distancia a grados de longitud.
+    #
+    # * *Argumentos*:
+    #   - +distance+: Distancia a convertir.
+    #   - +current_unit+: Unidad de distancia dada (:km, :m, :miles, :nautic_miles). Por defecto usa DEFAULT_UNIT.
+    #   - +radius+: Radio de la esfera. Por defecto es EARTH_EQUATORIAL_RADIUS.
+    #
+    # * *Retorna*:
+    #   - Distancia convertida.
+    def self.distance_to_longitude (distance, current_unit = nil, radius = nil)
+      if current_unit == nil then current_unit = DEFAULT_UNIT end
+      if radius == nil then radius = EARTH_EQUATORIAL_RADIUS end
+
+      return distance_to_miles(distance, current_unit) / longitude_to_distance(1.0, :miles, radius)
+    end
+
+    # Convertir distancia a grados de latitud.
+    #
+    # * *Argumentos*:
+    #   - +distance+: Distancia a convertir.
+    #   - +current_unit+: Unidad de distancia dada (:km, :m, :miles, :nautic_miles). Por defecto usa DEFAULT_UNIT.
+    #   - +radius+: Radio de la esfera. Por defecto es EARTH_POLAR_RADIUS.
+    #
+    # * *Retorna*:
+    #   - Distancia convertida.
+    def self.distance_to_latitude (distance, current_unit = nil, radius = nil)
+      if current_unit == nil then current_unit = DEFAULT_UNIT end
+      if radius == nil then radius = EARTH_POLAR_RADIUS end
+
+      return distance_to_miles(distance, current_unit) / latitude_to_distance(1.0, :miles, radius)
     end
 
   end
